@@ -1,0 +1,225 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Montserrat:400,700|Crete+Round:400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+@import url(https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i);
+* {
+    font-family: 'Product Sans', 'Lato', "Montserrat", sans-serif;
+}
+
+body {
+    background: #F1F1F1;
+}
+
+.navbar-header .navb {
+    color: white !important;
+}
+
+.adp {
+    margin: 0 !important;
+    color: white;
+}
+
+.navb {
+    color: white;
+}
+.back{
+  color: rgb(52, 200, 196) !important;
+}
+
+.ac {
+    color: black;
+    height: 100vh;
+    padding: 50px;
+}
+
+.catchy {
+    padding: 1px 5px;
+}
+
+.landing {
+    background-image: : url("../img/opback.jpg");
+    background-color: white;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.opback {
+    background: url("../img/opback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.nbg {
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../img/employer.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    height: 30vh;
+    overflow-y: hidden;
+}
+
+.ljumb {
+    min-height: 100vh;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 150px 0;
+    background: rgba(255, 0, 0, 0);
+}
+
+.ljumb h2 {
+    color: white;
+}
+
+.ljumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.snav {
+    margin-bottom: 0;
+    border: none;
+    background: rgba(255, 0, 0, 0);
+    color: #777777 !important;
+}
+
+.snav a {
+    color: #777777 !important;
+}
+
+.caption h2 a {
+    text-decoration: none !important;
+    color: #777777 !important;
+}
+
+.nb {
+    border: none !important;
+    cursor: pointer;
+}
+
+.mab {
+    border: 2px solid #E7E7E7 !important;
+    border-radius: 50px !important;
+    padding: 8px 22px !important;
+}
+
+.gsj {
+    padding: 50px;
+    text-align: right;
+}
+
+.gsf {
+    float: right;
+}
+
+.gsf .form-control {
+    height: 30px !important;
+    float: left;
+}
+
+.gsb {
+    height: 30px !important;
+    float: left;
+    line-height: 12px;
+}
+
+.signin, .signup {
+    margin-top: 100px;
+    box-shadow: 1px 1px 5px black;
+}
+
+.settings {
+    background: white;
+    padding: 80px;
+}
+
+.imgup .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.catchy h4{
+  font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 320px) {}
+
+@media (min-width: 768px) {
+    .gsf .form-control {
+        width: 200px;
+    }
+    .settings {
+        width: 80%;
+        background: white;
+        padding: 80px 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    .landing {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .ljumb {
+        padding: 240px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .catchy {
+        padding: 80px 150px;
+    }
+    .ac {
+        padding: 70px;
+    }
+    .nbg {
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/employer.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+        height: 100vh;
+    }
+}
