@@ -1,4 +1,7 @@
 # stupervision
 
-This should be a supervison appoinment management system
-The frontend is almost done, it's basically the scheduling that's left
+This is a student project supervision management system 
+
+The project is basically completed
+
+Please check for **bugs**
