@@ -1,8 +1,12 @@
 <?php
 
     session_start();
+    if (!isset($_SESSION['email'])) {
+      header("location: ../");
+    }
     require('../lib\connectdb.ext');
     require('../lib\functions.php');
+    $user = getUser();
     if(isset($_POST['update']))
 		{
       $firstname  = purify($_POST['firstname']);
@@ -11,7 +15,7 @@
       $gender     = purify($_POST['gender']);
       $dob        = purify($_POST['dob']);
       $state      = purify($_POST['state']);
-      $country    = purify($_POST['country']);
+      $matric     = purify($_POST['matric']);
       $bio        = purify($_POST['bio']);
       $password   = purify($_POST['password']);
 			$repass     = purify($_POST['repass']);
@@ -28,14 +32,14 @@
             }else{
               if($image != ''){
                 require('../lib\upload.php');
-                $sql = " UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`country`='$country',`state`='$state',`bio`='$bio',`password`='$password',
+                $sql = " UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`matric`='$matric',`state`='$state',`bio`='$bio',`password`='$password',
                 `image` ='$image' WHERE `email` ='".$_SESSION['email']."'";
                 $stmt = $conn->prepare($sql);
         				$stmt->execute();
 
               }
               else{
-                $sql = " UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`country`='$country',`state`='$state',`bio`='$bio',`password`='$password'
+                $sql = " UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`matric`='$matric',`state`='$state',`bio`='$bio',`password`='$password'
                  WHERE `email` ='".$_SESSION['email']."'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
@@ -46,14 +50,14 @@
         }else{
           if($image != ''){
                 require('../lib\upload.php');
-                $sql = "UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`country`='$country',`state`='$state',`bio`='$bio',
+                $sql = "UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`matric`='$matric',`state`='$state',`bio`='$bio',
                 `image` ='$image' WHERE `email` ='".$_SESSION['email']."'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
 
         }
           else{
-            $sql = "UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`country`='$country',`state`='$state',`bio`='$bio'
+            $sql = "UPDATE `students` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`gender`='$gender',`dob`='$dob',`matric`='$matric',`state`='$state',`bio`='$bio'
              WHERE `email` ='".$_SESSION['email']."'";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
@@ -119,7 +123,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><span><i class="fa fa-comments"></i></span></a>
+                    <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><span><i class="fa fa-comments"></i></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="presentation" class="dropdown-header">Messages</li>
                             <li role="presentation" class="divider"></li>
@@ -132,7 +136,7 @@
                             <li role="presentation" class="divider"></li>
                             <li role="presentation"><a href="#">Item</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img src="<?php require('../lib\imgcheck.php');?>" alt="" class="img-circle" height="25px" width="25px"> <?php require('../lib\studentcheck.php');?> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="presentation"><a href="index.php">Profile</a></li>
@@ -230,19 +234,17 @@
 
             <div class="col-md-6">
               <div class="form-group">
+                <label for="matric">Matric No</label>
+                <input type="text" class="form-control" value="<?php echo $user['matric'] ?>" name="matric" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
                 <label for="state">State</label>
                 <input type="text" class="form-control" value="<?php echo $user['state'] ?>" name="state" placeholder="">
               </div>
             </div>
-
-
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" class="form-control" value="<?php echo $user['country'] ?>" name="country" placeholder="">
-              </div>
-            </div>
-
 
 
             <div class="col-md-12">

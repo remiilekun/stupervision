@@ -28,15 +28,7 @@
                           <div class="form-group"><span class="label label-default">password </span>
                               <input class="form-control" type="password" name='password' placeholder="********">
                           </div>
-                          <div class="form-group">
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Remember me
-                                </label>
-                            </div>
-                          </div>
-
-                            <a onclick="login()" class="btn btn-success btn-block" id="signin">Sign In</a>
+                              <a onclick="login()" class="btn btn-success btn-block" id="signin">Sign In</a>
                             <a class="btn btn-default btn-block" href="register.php">Create an account</a>
 
                             <br>

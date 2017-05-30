@@ -21,8 +21,8 @@
                 echo "Mismatch";
             }
              else {
-                	$sql = "INSERT INTO `students`(`firstname`, `lastname`, `email`, `phone`, `country`, `state`, `city`, `bio`, `password`)
-                   VALUES ('','','".$email."','','','','','','".$pwd."')";
+                	$sql = "INSERT INTO `students`(`firstname`, `lastname`, `email`, `phone`, `image`, `gender`, `dob`, `matric`, `state`, `bio`, `password`)
+                   VALUES ('','','".$email."','','','','','','','','".$pwd."')";
       							if ($conn->exec($sql)) {
 												$_SESSION['email']= $_POST['email'];
 		                   	$_SESSION['welmess'] = "Welcome to Stupervison! You have signed up successfully.";

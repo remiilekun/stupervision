@@ -1,8 +1,3 @@
-<?php
-      session_start();
-      require('lib\connectdb.ext');
-      require('lib\functions.php');
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,13 +27,15 @@
 
         </div>
         <div class="col-md-5 ac">
-            <form class="" action="admin.php" method="post">
+
+            <p id="check-e" class="bg-danger"></p>
+            <form class="" action="#" method="post"  name="adloginf" id="adloginf">
                 <h3>LOGIN</h3>
                 <input type="email" name="email" value="" placeholder="Email Address" class="form-control">
                 <br>
                 <input type="password" name="password" value="" placeholder="Password" class="form-control">
                 <br>
-                <button type="submit" name="submit" class="btn btn-success btn-block">Login</button>
+                <a onclick="adlogin()" class="btn btn-success btn-block" id="login">Login</a>
                 <br>
                 <p class="text-center"><a class="back" href="home.php"><i class="fa fa-long-arrow-left"> </i> Back to homepage</a></p>
             </form>
@@ -48,5 +45,6 @@
 
     <script src="assets/js/jquery.min.js" charset="utf-8"></script>
     <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="assets/js/scripts.js" charset="utf-8"></script>
   </body>
 </html>
